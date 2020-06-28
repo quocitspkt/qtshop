@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0-preview2-19525-03\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0-preview2-19525-03\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D573CFED-F642-4868-B921-4226CB26CDFE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TeduShop.Data</RootNamespace>
+    <AssemblyName>TeduShop.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0-preview2-19525-03\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0-preview2-19525-03\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\201910300348077_InitialDB.cs" />
+    <Compile Include="Migrations\201910300348077_InitialDB.Designer.cs">
+      <DependentUpon>201910300348077_InitialDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300353402_DeleteStatus.cs" />
+    <Compile Include="Migrations\201910300353402_DeleteStatus.Designer.cs">
+      <DependentUpon>201910300353402_DeleteStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300717583_Addstatus.cs" />
+    <Compile Include="Migrations\201910300717583_Addstatus.Designer.cs">
+      <DependentUpon>201910300717583_Addstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300724464_AddNew1.cs" />
+    <Compile Include="Migrations\201910300724464_AddNew1.Designer.cs">
+      <DependentUpon>201910300724464_AddNew1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910300741568_AddErrorTable.cs" />
+    <Compile Include="Migrations\201910300741568_AddErrorTable.Designer.cs">
+      <DependentUpon>201910300741568_AddErrorTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911060808201_Integared-AspNetIdentity.cs" />
+    <Compile Include="Migrations\201911060808201_Integared-AspNetIdentity.designer.cs">
+      <DependentUpon>201911060808201_Integared-AspNetIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911070058077_ChangeKey.cs" />
+    <Compile Include="Migrations\201911070058077_ChangeKey.designer.cs">
+      <DependentUpon>201911070058077_ChangeKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911171011121_AddTagFiel.cs" />
+    <Compile Include="Migrations\201911171011121_AddTagFiel.designer.cs">
+      <DependentUpon>201911171011121_AddTagFiel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911201138192_AddContentToSlide.cs" />
+    <Compile Include="Migrations\201911201138192_AddContentToSlide.designer.cs">
+      <DependentUpon>201911201138192_AddContentToSlide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911220548088_AddMoreEntity.cs" />
+    <Compile Include="Migrations\201911220548088_AddMoreEntity.designer.cs">
+      <DependentUpon>201911220548088_AddMoreEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911220642459_AddForeingkey.cs" />
+    <Compile Include="Migrations\201911220642459_AddForeingkey.designer.cs">
+      <DependentUpon>201911220642459_AddForeingkey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911220757121_changePage.cs" />
+    <Compile Include="Migrations\201911220757121_changePage.designer.cs">
+      <DependentUpon>201911220757121_changePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911220907404_AddContactDetail.cs" />
+    <Compile Include="Migrations\201911220907404_AddContactDetail.designer.cs">
+      <DependentUpon>201911220907404_AddContactDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911221001278_Feedback.cs" />
+    <Compile Include="Migrations\201911221001278_Feedback.designer.cs">
+      <DependentUpon>201911221001278_Feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911221049307_Addfeedback3.cs" />
+    <Compile Include="Migrations\201911221049307_Addfeedback3.designer.cs">
+      <DependentUpon>201911221049307_Addfeedback3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911231102390_AddCustomerID.cs" />
+    <Compile Include="Migrations\201911231102390_AddCustomerID.designer.cs">
+      <DependentUpon>201911231102390_AddCustomerID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911231205562_RenamIdentity.cs" />
+    <Compile Include="Migrations\201911231205562_RenamIdentity.designer.cs">
+      <DependentUpon>201911231205562_RenamIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911231218268_AddGroupUser.cs" />
+    <Compile Include="Migrations\201911231218268_AddGroupUser.designer.cs">
+      <DependentUpon>201911231218268_AddGroupUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911240635498_ChangeOrderDetail.cs" />
+    <Compile Include="Migrations\201911240635498_ChangeOrderDetail.designer.cs">
+      <DependentUpon>201911240635498_ChangeOrderDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911240637478_RevenueStatisticSP.cs" />
+    <Compile Include="Migrations\201911240637478_RevenueStatisticSP.designer.cs">
+      <DependentUpon>201911240637478_RevenueStatisticSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ApplicationGroupRepository.cs" />
+    <Compile Include="Repositories\ApplicationRoleGroupRepository.cs" />
+    <Compile Include="Repositories\ApplicationRoleRepository.cs" />
+    <Compile Include="Repositories\ApplicationUserGroupRepository.cs" />
+    <Compile Include="Repositories\ContactDetailRepository.cs" />
+    <Compile Include="Repositories\ErrorRepository.cs" />
+    <Compile Include="Repositories\FeedbackRepository.cs" />
+    <Compile Include="Repositories\FooterRepository.cs" />
+    <Compile Include="Repositories\MenuGroupRepository.cs" />
+    <Compile Include="Repositories\MenuRepository.cs" />
+    <Compile Include="Repositories\OrderDetailRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
+    <Compile Include="Repositories\PageRepository.cs" />
+    <Compile Include="Repositories\PostCategoryRepository.cs" />
+    <Compile Include="Repositories\PostRepository.cs" />
+    <Compile Include="Repositories\PostTagRepository.cs" />
+    <Compile Include="Repositories\ProductCategoryRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\ProductTagRepository.cs" />
+    <Compile Include="Repositories\SlideRepository.cs" />
+    <Compile Include="Repositories\SupportOnlineRepository.cs" />
+    <Compile Include="Repositories\SystemConfigRepository.cs" />
+    <Compile Include="Repositories\TagRepository.cs" />
+    <Compile Include="Repositories\VisitorStaticRepository.cs" />
+    <Compile Include="ShopDbContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TeduShop.Common\Common.csproj">
+      <Project>{300cc7f5-31a6-44b7-8d90-f354ac34b936}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TeduShop.Model\Model.csproj">
+      <Project>{1a60e027-7b3b-4881-9ec3-2666b297cb43}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910300348077_InitialDB.resx">
+      <DependentUpon>201910300348077_InitialDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300353402_DeleteStatus.resx">
+      <DependentUpon>201910300353402_DeleteStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300717583_Addstatus.resx">
+      <DependentUpon>201910300717583_Addstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300724464_AddNew1.resx">
+      <DependentUpon>201910300724464_AddNew1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910300741568_AddErrorTable.resx">
+      <DependentUpon>201910300741568_AddErrorTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911060808201_Integared-AspNetIdentity.resx">
+      <DependentUpon>201911060808201_Integared-AspNetIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911070058077_ChangeKey.resx">
+      <DependentUpon>201911070058077_ChangeKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911171011121_AddTagFiel.resx">
+      <DependentUpon>201911171011121_AddTagFiel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911201138192_AddContentToSlide.resx">
+      <DependentUpon>201911201138192_AddContentToSlide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911220548088_AddMoreEntity.resx">
+      <DependentUpon>201911220548088_AddMoreEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911220642459_AddForeingkey.resx">
+      <DependentUpon>201911220642459_AddForeingkey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911220757121_changePage.resx">
+      <DependentUpon>201911220757121_changePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911220907404_AddContactDetail.resx">
+      <DependentUpon>201911220907404_AddContactDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911221001278_Feedback.resx">
+      <DependentUpon>201911221001278_Feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911221049307_Addfeedback3.resx">
+      <DependentUpon>201911221049307_Addfeedback3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911231102390_AddCustomerID.resx">
+      <DependentUpon>201911231102390_AddCustomerID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911231205562_RenamIdentity.resx">
+      <DependentUpon>201911231205562_RenamIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911231218268_AddGroupUser.resx">
+      <DependentUpon>201911231218268_AddGroupUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911240635498_ChangeOrderDetail.resx">
+      <DependentUpon>201911240635498_ChangeOrderDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911240637478_RevenueStatisticSP.resx">
+      <DependentUpon>201911240637478_RevenueStatisticSP.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0-preview2-19525-03\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0-preview2-19525-03\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0-preview2-19525-03\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0-preview2-19525-03\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0-preview2-19525-03\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0-preview2-19525-03\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
