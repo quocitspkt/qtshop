@@ -75,6 +75,9 @@ namespace Web.Controllers
                     AuthenticationProperties props = new AuthenticationProperties();
                     props.IsPersistent = model.RememberMe;
                     authenticationManager.SignIn(props, identity);
+
+                    //thay đổi trạng thái từ chưa login sang đã login
+                    Session["IsLogin"] = 1;
                     if (Url.IsLocalUrl(returnUrl))
                     {
                         return Redirect(returnUrl);
@@ -133,8 +136,8 @@ namespace Web.Controllers
 
 
                 var adminUser = await _userManager.FindByEmailAsync(model.Email);
-                if (adminUser != null)
-                    await _userManager.AddToRolesAsync(adminUser.Id, new string[] { "User" });
+                //if (adminUser != null)
+                    //await _userManager.AddToRolesAsync(adminUser.Id, new string[] { "User" });
 
                 string content = System.IO.File.ReadAllText(Server.MapPath("/Assets/client/template/newuser.html"));
                 content = content.Replace("{{UserName}}", adminUser.FullName);
@@ -156,6 +159,9 @@ namespace Web.Controllers
         {
             IAuthenticationManager authenticationManager = HttpContext.GetOwinContext().Authentication;
             authenticationManager.SignOut();
+
+            //thay đổi trạng thái từ login sang chưa login
+            Session["IsLogin"] = null;
             return RedirectToAction("Index", "Home");
         }
     }

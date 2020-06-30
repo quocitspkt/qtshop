@@ -3,6 +3,11 @@
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/Layouts.cshtml";
 }
+@if (Session["Non_Login_Alert"] != null)
+{
+    <script>alert("Bạn chưa đăng nhập !")</script>
+    Session["Non_Login_Alert"] = null;
+}
 <div class="account_grid">
     <div class="login-right">
         <h3>Đăng nhập</h3>
