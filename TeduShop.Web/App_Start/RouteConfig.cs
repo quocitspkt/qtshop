@@ -28,6 +28,12 @@ namespace Web
                   namespaces: new string[] { "Web.Controllers" }
               );
             routes.MapRoute(
+                  name: "TaiKhoan",
+                  url: "tai-khoan.html",
+                  defaults: new { controller = "Account", action = "Detail", id = UrlParameter.Optional },
+                  namespaces: new string[] { "Web.Controllers" }
+              );
+            routes.MapRoute(
                  name: "Login",
                  url: "dang-nhap.html",
                  defaults: new { controller = "Account", action = "Login", id = UrlParameter.Optional },

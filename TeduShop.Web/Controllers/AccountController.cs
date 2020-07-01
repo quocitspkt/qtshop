@@ -165,7 +165,7 @@ namespace Web.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public ActionResult ViewDetail()
+        public ActionResult Detail()
         {
             return View();
         }
