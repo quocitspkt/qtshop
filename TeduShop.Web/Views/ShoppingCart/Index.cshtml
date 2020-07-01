@@ -25,7 +25,7 @@
             </table>
             <button class="btn btn-success" id="btnContinue">Tiếp tục mua hàng</button>
             <button class="btn btn-danger" id="btnDeleteAll">Xóa giỏ hàng</button>
-            <button class="btn btn" id="btnCheckout">Thanh toán</button>
+            <button class="btn btn" id="btnCheckout">Đặt hàng</button>
             <div class="pull-right">
                 Tổng tiền: <span id="lblTotalOrder"></span>
             </div>
@@ -36,6 +36,10 @@
                     <h3>Thanh toán</h3>
                     <div class="contact-form">
                         <form method="post" id="frmPayment">
+                            <input type="radio" id="rdOnlinePay" name="payment" value="Thanh toán online" checked/>
+                            Thanh toán online
+                            <input type="radio" id="rdLatePay" name="payment" value="Thanh toán khi nhận hàng"/>
+                            Thanh toán khi nhận hàng <br/><br />
                             @if (Request.IsAuthenticated)
                             {
                                 <label>
