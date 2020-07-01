@@ -61,7 +61,7 @@
             <div class="header-bottom-right">
                 @using (Html.BeginForm("LogOut", "Account", FormMethod.Post, new { @id = "frmLogout" }))
                 {
-                    if (Request.IsAuthenticated)
+                    if (Session["IsLogin"] != null)
                     {
                         @Html.AntiForgeryToken()
                         <ul class="login">
@@ -79,8 +79,14 @@
                     }
                 }
 
-
-                <div class="cart"><a href="/gio-hang.html"><span> </span>GIỎ HÀNG</a></div>
+                @if (Session["IsLogin"] == null)
+                {
+                    <div class="cart"><a href="/dang-nhap.html"><span> </span>GIỎ HÀNG</a></div>
+                }
+                else
+                {
+                    <div class="cart"><a href="/gio-hang.html"><span> </span>GIỎ HÀNG</a></div>
+                }
                 <div class="clearfix"> </div>
             </div>
             <div class="clearfix"> </div>

@@ -111,7 +111,8 @@
             CustomerEmail: $('#txtEmail').val(),
             CustomerMobile: $('#txtPhone').val(),
             CustomerMessage: $('#txtMessage').val(),
-            PaymentMethod: "Thanh toán tiền mặt",
+            //PaymentMethod: "Thanh toán tiền mặt",            
+            PaymentMethod: $("input[name='payment']:checked").val(),
             Status: false
         }
         $.ajax({
@@ -128,6 +129,7 @@
                     cart.deleteAll();
                     setTimeout(function () {
                         $('#cartContent').html('Cảm ơn bạn đã đặt hàng thành công. Chúng tôi sẽ liên hệ sớm nhất.');
+                        //$('#cartContent').html($("input[name='payment']:checked").val());
                     }, 2000);
 
                 }
