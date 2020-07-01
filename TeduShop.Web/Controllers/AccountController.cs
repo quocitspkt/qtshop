@@ -164,5 +164,10 @@ namespace Web.Controllers
             Session["IsLogin"] = null;
             return RedirectToAction("Index", "Home");
         }
+
+        public ActionResult Detail()
+        {
+            return View();
+        }
     }
 }
