@@ -31,8 +31,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     @{Html.RenderAction("Header", "Home");}
     <!---->
     <div class="container">
-        @RenderBody()
         @{Html.RenderAction("Category", "Home");}
+        @RenderBody()
     </div>
 
     @{ Html.RenderAction("Footer", "Home");}

@@ -52,6 +52,12 @@ namespace Web
            namespaces: new string[] { "Web.Controllers" }
        );
             routes.MapRoute(
+           name: "UserDetail",
+           url: "tai-khoan.html",
+           defaults: new { controller = "Account", action = "ViewDetail", id = UrlParameter.Optional },
+           namespaces: new string[] { "Web.Controllers" }
+       );
+            routes.MapRoute(
                    name: "Page",
                    url: "trang/{alias}.html",
                    defaults: new { controller = "Page", action = "Checkout", alias = UrlParameter.Optional },

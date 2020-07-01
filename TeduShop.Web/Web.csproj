@@ -7029,6 +7029,7 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Libs\CKFinder.dll" />
     <Content Include="obj\Debug\TeduShop.Web.csproj.FileListAbsolute.txt" />
@@ -7876,6 +7877,9 @@
     <Content Include="Views\Menus\Details.cshtml" />
     <Content Include="Views\Menus\Edit.cshtml" />
     <Content Include="Views\Menus\Index.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Account\ViewDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
